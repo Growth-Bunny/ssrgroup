@@ -1,0 +1,233 @@
+{% load static %}
+<!DOCTYPE html>
+<!-- 
+Template Name: Marvin - Responsive Bootstrap 4 Admin Dashboard Template
+Author: Hencework
+Contact: https://hencework.ticksy.com/
+
+License: You must have a valid license purchased only from templatemonster to legally use the template for your project.
+-->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Marvin I Invoice</title>
+    <meta name="description" content="A responsive bootstrap 4 admin dashboard template by hencework" />
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Toggles CSS -->
+    <link href="{% static 'admin/vendors/jquery-toggles/css/toggles.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'admin/vendors/jquery-toggles/css/themes/toggles-light.css' %}" rel="stylesheet" type="text/css">
+
+    <!-- Custom CSS -->
+    <link href="{% static 'admin/dist/css/style.css' %}" rel="stylesheet" type="text/css">
+
+    <style>
+        .pad-left{
+            margin-left:14rem !important;
+        }
+        .pad-leftT{
+            margin-left:10rem !important;
+        }
+    </style>
+</head>
+
+<body>
+    
+    
+	<!-- HK Wrapper -->
+	<div class="hk-wrapper hk-vertical-nav">
+
+        <!-- Top Navbar -->
+      
+        <!-- /Top Navbar -->
+
+        <!-- Vertical Nav -->
+        
+        <div id="hk_nav_backdrop" class="hk-nav-backdrop"></div>
+        <!-- /Vertical Nav -->
+
+        <!-- Setting Panel -->
+       
+        <!-- /Setting Panel -->
+
+        <!-- Main Content -->
+        <div class="hk-pg-wrapper">
+            <!-- Breadcrumb -->
+            
+            <!-- /Breadcrumb -->
+
+            <!-- Container -->
+            <div class="container">
+                <!-- Title -->
+                <div class="hk-pg-header mb-10">
+					<div>
+						<h4 class="hk-pg-title"><span class="pg-title-icon"><span class="feather-icon"><i data-feather="book"></i></span></span>Quotation</h4>
+                    </div>
+					<div class="d-flex">
+            
+                      <button type="submit" class="btn btn-outline-primary btnp" onclick="window.print()"><span class="feather-icon"><i data-feather="printer"></i></span></button>
+                        {% comment %} <a href="#" class="text-secondary mr-15" onclick="window.print()"><span class="feather-icon"><i data-feather="printer"></i></span></a> {% endcomment %}
+                        <input type="hidden" name="ref" value="{{plot.id}}">
+                        {% comment %} <a href="#" class="text-secondary mr-15"><span class="feather-icon"><i data-feather="download"></i></span></a> {% endcomment %}
+                        {% comment %} <button class="btn btn-primary btn-sm">Create New</button> {% endcomment %}
+                    </div>
+                </div>
+             
+                <!-- /Title -->
+
+                <!-- Row -->
+                <div class="row">
+                    <div class="col-xl-12">
+                        <section class="hk-sec-wrapper hk-invoice-wrap pa-35">
+                            <div class="invoice-from-wrap">
+                                <div class="row">
+                                    <div class="col-md-7 mb-20">
+                                        <img class="img-fluid invoice-brand-img d-block w-250p mb-20" src="{% static 'images/logo5.jpg' %}" alt="brand" />
+                                        <h6 class="mb-5">SSRGROUP</h6>
+                                        <address>
+												<span class="d-block">202165, Uttar Pradesh</span>
+												<span class="d-block">ssrhomezone@gmail.com</span>
+												
+											</address>
+                                    </div>
+                                    <div class="col-md-5 mb-20">
+                                        {% comment %} <h4 class="mb-35 font-weight-600">Invoice / Receipt</h4> {% endcomment %}
+                                        <span class="d-block">Receipt Date:<span class="pl-10 text-dark">{{plot.receipt_Date}}</span></span>
+                                        {% comment %} <span class="d-block">Invoice / Receipt #<span class="pl-10 text-dark">21321434</span></span> {% endcomment %}
+                                        {% comment %} <span class="d-block">Customer #<span class="pl-10 text-dark">321434</span></span> {% endcomment %}
+                                    </div>
+                                </div>
+                            </div>
+                            <hr class="mt-0">
+                            
+                            <h3 class="mb-5">Plot Details</h3>
+                            <hr>
+                            <div class="invoice-details">
+                                <div class="container">
+                                    <div class="row">
+                                      <div class="col mb-2">
+                                        <h6>Plot No</h6>
+                                      </div>
+                                      <div class="col">
+                                        <h6>: {{plot.plot_no}}</h6>
+                                      </div>
+                                    </div>
+                                    <div class="row mb-2">
+                                      <div class="col">
+                                        <h6>Plot Size</h6>
+                                      </div>
+                                      <div class="col">
+                                        <h6>: {{plot.plot_size}}0 sqd</h6>
+                                      </div>
+                                    </div>
+                                    <div class="row mb-2">
+                                      <div class="col">
+                                        <h6>Plot Rate</h6>
+                                      </div>
+                                      <div class="col">
+                                        <h6>: {{plot.plot_rate}}0</h6>
+                                      </div>
+                                    </div>
+                                    <div class="row mb-2">
+                                      <div class="col">
+                                        <h6>Total Plot Amount</h6>
+                                      </div>
+                                      <div class="col">
+                                        <h6>: {{plot.t_plot_amt}}0</h6>
+                                      </div>
+                                    </div>
+                                    <div class="row mb-2">
+                                      <div class="col">
+                                        <h6>PLC(%)</h6>
+                                      </div>
+                                      <div class="col">
+                                        <h6>: 0.00</h6>
+                                      </div>
+                                    </div>
+                                    <div class="row mb-2">
+                                      <div class="col">
+                                        <h6>with PLC Amount</h6>
+                                      </div>
+                                      <div class="col">
+                                        <h6>: {{plot.t_plot_amt}}0</h6>
+                                      </div>
+                                    </div>
+                                    <div class="row mb-2">
+                                      <div class="col">
+                                        <h6>Discount</h6>
+                                      </div>
+                                      <div class="col">
+                                        <h6>: 0.00</h6>
+                                      </div>
+                                    </div>
+                                    <div class="row mb-2">
+                                      <div class="col">
+                                        <h6>Net Payable Amount</h6>
+                                      </div>
+                                      <div class="col">
+                                        <h6>: {{plot.t_plot_amt}}0</h6>
+                                      </div>
+                                    </div>
+                                   
+                                  </div>
+                               
+                                {% comment %} <strong><span>Plot No</span></strong> {% endcomment %}
+                                {% comment %} <h6 class="mb-3">Plot No <span class="pad-left">: A-14</span></h6>
+                                <h6 class="mb-3">Plot Size <span class="pad-left">: A-14</span></h6>
+                                <h6 class="mb-3">Plot Rate <span class="pad-left">: A-14</span></h6>
+                                <h6 class="mb-3">Total Plot Amount <span class="pad-leftT">:A-14</span></h6> {% endcomment %}
+                                {% comment %} <h6 class="mb-3">Plot No <span class="pad-left">:</span> A-14</h6> {% endcomment %}
+                                
+                                
+                            </div>
+                            <hr>
+                            {% comment %} <ul class="invoice-terms-wrap font-14 list-ul">
+                                <li>A buyer must settle his or her account within 30 days of the date listed on the invoice.</li>
+                                <li>The conditions under which a seller will complete a sale. Typically, these terms specify the period allowed to a buyer to pay off the amount due.</li>
+                            </ul> {% endcomment %}
+                        </section>
+                    </div>
+                </div>
+                <!-- /Row -->
+            </div>
+            <!-- /Container -->
+
+           
+
+        </div>
+        <!-- /Main Content -->
+
+    </div>
+    <!-- /HK Wrapper -->
+
+    <!-- jQuery -->
+    <script src="{% static 'admin/vendors/jquery/dist/jquery.min.js' %}"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{% static 'admin/vendors/popper.js/dist/umd/popper.min.js' %}"></script>
+    <script src="{% static 'admin/vendors/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+
+    <!-- Slimscroll JavaScript -->
+    <script src="{% static 'admin/dist/js/jquery.slimscroll.js' %}"></script>
+
+    <!-- Fancy Dropdown JS -->
+    <script src="{% static 'admin/dist/js/dropdown-bootstrap-extended.js' %}"></script>
+
+    <!-- Toggles JavaScript -->
+    <script src="{% static 'admin/vendors/jquery-toggles/toggles.min.js' %}"></script>
+    <script src="{% static 'admin/dist/js/toggle-data.js' %}"></script>
+
+    <!-- FeatherIcons JavaScript -->
+    <script src="{% static 'admin/dist/js/feather.min.js' %}"></script>
+
+    <!-- Init JavaScript -->
+    <script src="{% static 'admin/dist/js/init.js' %}"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SSR|GROUP</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+
+<body style="width: 100%; height:100vh; padding-top: 50px;" class="bg-light">
+
+    <div class="container pt-5 pb-3" style="background-image: linear-gradient(to bottom right, blue, white);">
+        <div class="row">
+            <div class="col">
+                <h3 style="color: #fff;">ThankYou, Registration Success</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col align-items-center" style="background-color: rgb(133, 178, 194); opacity: 0.8;">
+                <p style="margin-top: 1rem !important;"><span
+                        style="color: green; font-weight: bold; font-size: 20px;">Success!</span>Thank you! Your account
+                    is successfully created Your Login Details Given Below in a Table</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container"
+        style="background-image: linear-gradient(to bottom right, black, blue); padding-bottom: 50px;">
+        <div class="row">
+            <div class="col-12 ">
+                <p style="color: #fff;">
+                    Dear {{user.first_name}},<br>
+                    Thank you for becoming member of SSR GROUP <br>
+                    Your membership reflects your commitment to the promotion of exellence in the associate.We warmly
+                    welcome you as a member of the Wonderful Bussiness Opportunity in SSR GROUP.
+                </p>
+            </div>
+            <div class="col-12 mt-5 mb-3 text-white">
+                Your Login Details here:
+            </div>
+            <div class="row">
+                <div class="col-lg-5 ms-md-5 border border-3 border-white" style="margin-right: 10px !important; margin-left: 10px !important;">
+                    <div class="justify-content-between" style="display: flex; border-bottom: none !important;">
+                        <div class="col-sm-4 text-white">User Name</div>
+                        
+                        <div class="col-sm-4 text-white">{{user.first_name}}</div>
+                    </div>
+                    <div class="justify-content-between" style="display: flex; border-bottom: none !important;">
+                        <div class="col-sm-4 text-white">User id</div>
+                        <div class="col-sm-4 text-white">{{user.user_id}}</div>
+                    </div>
+                    <div class="justify-content-between" style="display: flex; border-bottom: none !important;">
+                        <div class="col-sm-4 text-white">Password</div>
+                        <div class="col-sm-4 text-white">{{psw}}</div>
+                    </div>
+                    <div class="justify-content-between" style="display: flex;">
+                        <div class="col-sm-4 text-white">Joining Date</div>
+                        <div class="col-sm-4 text-white">{{agent.created_at}}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+            <div class="col-lg-5">
+                <div class=" d-flex justify-content-center" >
+                    <a href="{% url 'login' %}"><button type="button" class="btn btn-warning mt-3 ps-4 pe-4">Login</button></a>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
